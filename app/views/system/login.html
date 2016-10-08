@@ -2,10 +2,19 @@
 
 {% block title %}login{% endblock %}
 
+{% block header %}
+  <link rel="stylesheet" href="/css/system/login.css">
+  <script src="/lib/testLib.js"></script>
+{% endblock %}
+
 {% block body %}
 <form action="/login" method="post">
   <input type="text" name="username">
   <input type="password" name="password">
   <button type="submit">login</button>
 </form>
+{% endblock %}
+
+{% block scripts %}
+  <script src="/js/test.js"></script>
 {% endblock %}
