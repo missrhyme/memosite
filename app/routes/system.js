@@ -3,6 +3,8 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var User = mongoose.model('user');
 
+var encrypt = require('../utils/encrypt');
+
 // loginPage
 router.get('/', function(req, res, next){
   res.render('system/login', {
@@ -25,9 +27,10 @@ router.post('/register', function(req, res, next) {
     if(result.length){
       res.send('user has existed');
     }else{
+      var hash = encrypt(password);
       new User({
         username: username,
-        password: password
+        password: hash
       })
       .save(function(err, user){
         console.log(user);
@@ -36,14 +39,15 @@ router.post('/register', function(req, res, next) {
     }
   })
   
-})
+});
 
 router.post('/login', function(req, res, next) {
   var username = req.body.username;
   var password = req.body.password;
+  var hash = encrypt(password);
   User.find({
     username: username,
-    password: password
+    password: hash
   }, function(err, result){
     if(result.length){
       res.send('success');
@@ -51,6 +55,6 @@ router.post('/login', function(req, res, next) {
       res.send('wrong username/password');
     }
   })
-})
+});
 
 module.exports = router;
