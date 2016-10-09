@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var User = mongoose.model('user');
+var User = mongoose.model('User');
 
 var encrypt = require('../utils/encrypt');
 
@@ -50,7 +50,8 @@ router.post('/login', function(req, res, next) {
     password: hash
   }, function(err, result){
     if(result.length){
-      res.send('success');
+      req.session.username = username;
+      res.redirect('/listControl');
     }else{
       res.send('wrong username/password');
     }

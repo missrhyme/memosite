@@ -1,0 +1,24 @@
+{% extends '../layout/layout.html' %}
+
+{% block header %}
+  <!-- <link rel="stylesheet" href="/css/system/login.css"> -->
+  <script src="/lib/testLib.js"></script>
+{% endblock %}
+
+{% block body %}
+<ul>
+  {% for item in list %}
+  <li>{{ item.title }}</li>
+  {% endfor %}
+</ul>
+
+<form action="/addItem" method="post">
+  <input type="text" name="title">
+  <input type="text" name="content">
+  <button type="submit">submit</button>
+</form>
+{% endblock %}
+
+{% block scripts %}
+  <script src="/js/test.js"></script>
+{% endblock %}
