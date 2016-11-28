@@ -1,0 +1,344 @@
+{
+  "GetMatchingProductResponse": {
+    "$": {
+      "xmlns": "http://mws.amazonservices.com/schema/Products/2011-10-01"
+    },
+    "GetMatchingProductResult": [
+      {
+        "$": {
+          "ASIN": "B002KT3XRQ",
+          "status": "Success"
+        },
+        "Product": [
+          {
+            "$": {
+              "xmlns": "http://mws.amazonservices.com/schema/Products/2011-10-01",
+              "xmlns:ns2": "http://mws.amazonservices.com/schema/Products/2011-10-01/default.xsd"
+            },
+            "Identifiers": [
+              {
+                "MarketplaceASIN": [
+                  {
+                    "MarketplaceId": [
+                      "ATVPDKIKX0DER"
+                    ],
+                    "ASIN": [
+                      "B002KT3XRQ"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "AttributeSets": [
+              {
+                "ns2:ItemAttributes": [
+                  {
+                    "$": {
+                      "xml:lang": "en-US"
+                    },
+                    "ns2:Binding": [
+                      "Apparel"
+                    ],
+                    "ns2:Brand": [
+                      "Pearl iZUMi"
+                    ],
+                    "ns2:Department": [
+                      "mens"
+                    ],
+                    "ns2:Feature": [
+                      "Select transfer fabric sets the benchmark for moisture transfer and four-way performance stretch",
+                      "6-Panel anatomic design for superior, chafe-free comfort, UPF 50+ sun protection",
+                      "Comfortable silicone leg grippers keep shorts in place, moisture-wicking, antimicrobial properties",
+                      "Tour 3D Chamois is male-specific and non-chafing with padding in key areas",
+                      "86 percent nylon, 14% spandex, 9-Inch inseam"
+                    ],
+                    "ns2:ItemDimensions": [
+                      {
+                        "ns2:Height": [
+                          {
+                            "_": "2.00",
+                            "$": {
+                              "Units": "inches"
+                            }
+                          }
+                        ],
+                        "ns2:Length": [
+                          {
+                            "_": "9.00",
+                            "$": {
+                              "Units": "inches"
+                            }
+                          }
+                        ],
+                        "ns2:Width": [
+                          {
+                            "_": "9.00",
+                            "$": {
+                              "Units": "inches"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "ns2:Label": [
+                      "Pearl iZUMi"
+                    ],
+                    "ns2:ListPrice": [
+                      {
+                        "ns2:Amount": [
+                          "50.00"
+                        ],
+                        "ns2:CurrencyCode": [
+                          "USD"
+                        ]
+                      }
+                    ],
+                    "ns2:Manufacturer": [
+                      "Pearl iZUMi"
+                    ],
+                    "ns2:Model": [
+                      "0275"
+                    ],
+                    "ns2:PackageDimensions": [
+                      {
+                        "ns2:Height": [
+                          {
+                            "_": "2.80",
+                            "$": {
+                              "Units": "inches"
+                            }
+                          }
+                        ],
+                        "ns2:Length": [
+                          {
+                            "_": "9.75",
+                            "$": {
+                              "Units": "inches"
+                            }
+                          }
+                        ],
+                        "ns2:Width": [
+                          {
+                            "_": "8.40",
+                            "$": {
+                              "Units": "inches"
+                            }
+                          }
+                        ],
+                        "ns2:Weight": [
+                          {
+                            "_": "0.40",
+                            "$": {
+                              "Units": "pounds"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "ns2:PackageQuantity": [
+                      "1"
+                    ],
+                    "ns2:PartNumber": [
+                      "0275"
+                    ],
+                    "ns2:ProductGroup": [
+                      "Apparel"
+                    ],
+                    "ns2:ProductTypeName": [
+                      "SHORTS"
+                    ],
+                    "ns2:Publisher": [
+                      "Pearl iZUMi"
+                    ],
+                    "ns2:SmallImage": [
+                      {
+                        "ns2:URL": [
+                          "http://ecx.images-amazon.com/images/I/41ty3Sn%2BU8L._SL75_.jpg"
+                        ],
+                        "ns2:Height": [
+                          {
+                            "_": "75",
+                            "$": {
+                              "Units": "pixels"
+                            }
+                          }
+                        ],
+                        "ns2:Width": [
+                          {
+                            "_": "58",
+                            "$": {
+                              "Units": "pixels"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "ns2:Studio": [
+                      "Pearl iZUMi"
+                    ],
+                    "ns2:Title": [
+                      "Pearl iZUMi Men's Quest Cycling Short"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Relationships": [
+              {
+                "ns2:VariationChild": [
+                  {
+                    "Identifiers": [
+                      {
+                        "MarketplaceASIN": [
+                          {
+                            "MarketplaceId": [
+                              "ATVPDKIKX0DER"
+                            ],
+                            "ASIN": [
+                              "B002KT3XQC"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "ns2:Color": [
+                      "Black"
+                    ],
+                    "ns2:Size": [
+                      "Small"
+                    ]
+                  },
+                  {
+                    "Identifiers": [
+                      {
+                        "MarketplaceASIN": [
+                          {
+                            "MarketplaceId": [
+                              "ATVPDKIKX0DER"
+                            ],
+                            "ASIN": [
+                              "B002KT3XQW"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "ns2:Color": [
+                      "Black"
+                    ],
+                    "ns2:Size": [
+                      "Medium"
+                    ]
+                  },
+                  {
+                    "Identifiers": [
+                      {
+                        "MarketplaceASIN": [
+                          {
+                            "MarketplaceId": [
+                              "ATVPDKIKX0DER"
+                            ],
+                            "ASIN": [
+                              "B002KT3XQM"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "ns2:Color": [
+                      "Black"
+                    ],
+                    "ns2:Size": [
+                      "Large"
+                    ]
+                  },
+                  {
+                    "Identifiers": [
+                      {
+                        "MarketplaceASIN": [
+                          {
+                            "MarketplaceId": [
+                              "ATVPDKIKX0DER"
+                            ],
+                            "ASIN": [
+                              "B002KT3XR6"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "ns2:Color": [
+                      "Black"
+                    ],
+                    "ns2:Size": [
+                      "X-Large"
+                    ]
+                  },
+                  {
+                    "Identifiers": [
+                      {
+                        "MarketplaceASIN": [
+                          {
+                            "MarketplaceId": [
+                              "ATVPDKIKX0DER"
+                            ],
+                            "ASIN": [
+                              "B002KT3XRG"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "ns2:Color": [
+                      "Black"
+                    ],
+                    "ns2:Size": [
+                      "XX-Large"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "SalesRankings": [
+              {
+                "SalesRank": [
+                  {
+                    "ProductCategoryId": [
+                      "apparel_display_on_website"
+                    ],
+                    "Rank": [
+                      "159"
+                    ]
+                  },
+                  {
+                    "ProductCategoryId": [
+                      "2420095011"
+                    ],
+                    "Rank": [
+                      "1"
+                    ]
+                  },
+                  {
+                    "ProductCategoryId": [
+                      "2611189011"
+                    ],
+                    "Rank": [
+                      "4"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ResponseMetadata": [
+      {
+        "RequestId": [
+          "b12caada-d330-4d87-a789-EXAMPLE35872"
+        ]
+      }
+    ]
+  }
+}

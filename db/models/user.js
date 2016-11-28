@@ -10,11 +10,9 @@ var UserSchema = new Schema({
   password: String,
   list: [{
     type: Schema.Types.ObjectId,
-    ref: 'List'    
+    ref: 'List'
   }]
 });
-
-
 
 var ListSchema = new Schema({
   title: String,

@@ -15,7 +15,7 @@ router.get('/listControl', function(req, res, next){
         res.render('personal/list', {
           title: 'Login',
           list: result
-        }) 
+        })
       });
     })
   }else{
@@ -38,8 +38,8 @@ router.post('/addItem', function(req, res, next){
     i.save();
     item.list.push(i);
     item.save();
+    res.send('add Success');
   })
 });
 
 module.exports = router;
-

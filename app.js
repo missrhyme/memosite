@@ -1,6 +1,5 @@
 require('./db/database');
 
-var path = require('path');
 var express = require('express');
 var swig = require('swig');
 var bodyParser = require('body-parser');
@@ -20,10 +19,10 @@ app.set('view engine', 'html');
 
 app
   .use(bodyParser.json())
-  .use(bodyParser.urlencoded({ extended: false }))
+  .use(bodyParser.urlencoded({extended: false}))
   .use(cookieParser())
   .use(session({
-    resave: false,  
+    resave: false,
     saveUninitialized: true,
     secret: 'memosite',
     cookie: {
@@ -39,6 +38,6 @@ app
   .use('/', systemRoute)
   .use('/', listRoute);
 
-app.listen(3000, function(){
-  console.log('正在监听3000端口...');
+app.listen(4000, function(){
+  console.log('正在监听4000端口...');
 })
