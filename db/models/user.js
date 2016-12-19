@@ -1,8 +1,7 @@
-var mongoose = require('mongoose');
-var Schema   = mongoose.Schema;
+import mongoose, {Schema} from 'mongoose';
 
 // init user
-var UserSchema = new Schema({
+const UserSchema = new Schema({
   username: {
     type: String,
     unique: true
@@ -14,14 +13,14 @@ var UserSchema = new Schema({
   }]
 });
 
-var ListSchema = new Schema({
+const ListSchema = new Schema({
   title: String,
   content: String,
   owner: {
     type: Schema.Types.ObjectId,
     ref: 'User'
   }
-})
+});
 
-var User = mongoose.model('User', UserSchema);
-var List = mongoose.model('List', ListSchema);
+mongoose.model('User', UserSchema);
+mongoose.model('List', ListSchema);
