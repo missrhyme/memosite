@@ -1,19 +1,18 @@
-require('./db/database');
+import path from 'path';
+import express from 'express';
+import swig from 'swig';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import session from 'express-session';
 
-var express = require('express');
-var swig = require('swig');
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
-
-var systemRoute = require('./app/routes/system');
-var listRoute = require('./app/routes/list');
-var initDatabase = require('./db/database');
+import './db/database';
+import systemRoute from './app/routes/system';
+import listRoute from './app/routes/list';
 
 // express init
-var app = express();
+const app = express();
 
-app.set('views', __dirname + '/app/views');
+app.set('views', path.join(__dirname, '/app/views'));
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 
@@ -38,6 +37,17 @@ app
   .use('/', systemRoute)
   .use('/', listRoute);
 
-app.listen(4000, function(){
-  console.log('正在监听4000端口...');
-})
+app.listen(4000, () => console.info('正在监听4000端口...'));
+
+// test
+// async function test() {
+//   console.log(3);
+//   const a = await new Promise((resolve) => {
+//     setTimeout(() => resolve(1), 3000);
+//   });
+//   console.log(a);
+// }
+//
+// test();
+
+// TODO webpack is nessesary

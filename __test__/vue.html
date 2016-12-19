@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <section id="test">
+    <ul>
+      <li
+        v-for="(item, index) in items"
+        @click="test(index)"
+      >
+        {{item.title}} - {{item.content}}
+      </li>
+    </ul>
+    <input type="text" :value="val" @input="input">
+    <button @click="add">add</button>
+  </section>
+</body>
+<script src="http://cdn.bootcss.com/vue/2.1.6/vue.min.js"></script>
+<script>
+
+  // data以同步方式打印在页面上
+  new Vue({
+    el: '#test',
+    data: {
+      val: '',
+      items: [{
+        title: '1',
+        content: 'qqq'
+      },
+      {
+        title: '2',
+        content: 'ttt'
+      }]
+    },
+    methods: {
+      test: function(index){
+        console.log(index)
+      },
+      input: function(e){
+        this.val = e.target.value;
+      },
+      add: function(){
+        this.items.push({
+          title: Number(this.items.length) + 1,
+          content: this.val
+        });
+        this.val = '';
+      }
+    }
+  })
+</script>
+</html>
