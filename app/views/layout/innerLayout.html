@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/lib/semantic.min.css">
+  {% block header %}{% endblock %}
+</head>
+<body>
+
+  <div class="ui inverted segment" style="padding-left: 220px;z-index: 500">
+    <div class="ui inverted secondary pointing menu">
+      <a class="active item">
+        首页
+      </a>
+      <a class="item">
+        订单
+      </a>
+      <a class="item">
+        库存
+      </a>
+    </div>
+  </div>
+
+  <div class="ui left fixed vertical menu" style="padding-top: 100px">
+    <a class="blue item">Features</a>
+    <a class="blue item">Testimonials</a>
+    <a class="blue item">Sign-in</a>
+  </div>
+  <div style="padding: 50px 10px 20px 220px">
+    {% block body %}{% endblock %}
+  </div>
+  <script src="/lib/jquery.min.js" charset="utf-8"></script>
+  <script src="/lib/vue.min.js" charset="utf-8"></script>
+  <script src="/lib/semantic.min.js" charset="utf-8"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

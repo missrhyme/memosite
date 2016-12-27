@@ -8,6 +8,7 @@ import session from 'express-session';
 import './db/database';
 import systemRoute from './app/routes/system';
 import listRoute from './app/routes/list';
+import orderRoute from './app/routes/order';
 
 // express init
 const app = express();
@@ -32,12 +33,14 @@ app
 app.use('/css', express.static('./app/css'));
 app.use('/js', express.static('./app/js'));
 app.use('/lib', express.static('./app/lib'));
+app.use('/img', express.static('./app/img'));
 
 app
   .use('/', systemRoute)
-  .use('/', listRoute);
+  .use('/', listRoute)
+  .use('/', orderRoute);
 
-app.listen(4000, () => console.info('正在监听4000端口...'));
+app.listen(4000, () => console.info('正在监听4000端口...')); //eslint-disable-line
 
 // test
 // async function test() {

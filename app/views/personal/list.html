@@ -1,24 +1,218 @@
-{% extends '../layout/layout.html' %}
+{% extends '../layout/innerLayout.html' %}
 
 {% block header %}
   <!-- <link rel="stylesheet" href="/css/system/login.css"> -->
-  <script src="/lib/testLib.js"></script>
+  <!-- <script src="/lib/testLib.js"></script> -->
 {% endblock %}
 
 {% block body %}
-<ul>
-  {% for item in list %}
-  <li>{{ item.title }}</li>
-  {% endfor %}
-</ul>
 
-<form action="/addItem" method="post">
+<!-- test Table -->
+<table class="ui selectable celled table" id="store-list">
+  <thead>
+    <tr class="center aligned">
+      <th>缩略图</th>
+      <th>库存SKU编号</th>
+      <th>中文名称</th>
+      <th>仓位</th>
+      <th>当前库存</th>
+      <th>入库数量</th>
+      <th>单价</th>
+      <th>金额</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="(item, index) in items" :key="index" class="center aligned">
+      <td><img :src="item.image" alt="" height="100"></td>
+      <td v-text="item.skuid"></td>
+      <td v-text="item.name"></td>
+      <td v-text="item.position"></td>
+      <td v-text="item.store"></td>
+      <td v-text="item.count"></td>
+      <td v-text="item.unitPrice"></td>
+      <td v-text="item.price"></td>
+      <td>
+        <i class="edit icon"></i>
+        <i class="add square icon"></i>
+        <i class="area chart icon"></i>
+      </td>
+    </tr>
+  </tbody>
+
+  <!-- test pagination -->
+  <tfoot>
+    <tr><th colspan="9">
+      <div class="ui right floated pagination menu">
+        <a class="icon item">
+          <i class="left chevron icon"></i>
+        </a>
+        <a class="item">1</a>
+        <a class="item">2</a>
+        <a class="item">3</a>
+        <a class="item">4</a>
+        <a class="icon item">
+          <i class="right chevron icon"></i>
+        </a>
+      </div>
+    </th>
+  </tr></tfoot>
+</table>
+
+<!-- <form action="/addItem" method="post">
   <input type="text" name="title">
   <input type="text" name="content">
   <button type="submit">submit</button>
-</form>
+</form> -->
 {% endblock %}
 
 {% block scripts %}
-  <script src="/js/test.js"></script>
+  <script>
+  new Vue({
+    el: '#store-list',
+    data: {
+      items: [
+        {
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        },
+        {
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        },{
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        },{
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        },{
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        },{
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        },{
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        },{
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        },{
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        },{
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        },{
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        },{
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        },{
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        },{
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        },{
+          image: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1482416414&di=b0fa0e7a55bdff492396c990ff911464&src=http://dl.bizhi.sogou.com/images/2012/03/28/89939.jpg',
+          skuid: 'qqq',
+          name: '维尼熊',
+          position: '仓位',
+          store: 500,
+          count: 1200,
+          unitPrice: 10.34,
+          price: 5553.24
+        }
+      ]
+    },
+    methods: {
+    }
+  });
+  </script>
 {% endblock %}

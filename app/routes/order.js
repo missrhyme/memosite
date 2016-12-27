@@ -3,8 +3,8 @@ import {Router} from 'express';
 
 const router = new Router();
 
-router.get('/', (req, res) => {
-  res.render('personal/list', {
+router.get('/order/list', (req, res) => {
+  res.render('order/list', {
     title: 'TEST'
   });
 });

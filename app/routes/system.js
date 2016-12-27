@@ -1,61 +1,63 @@
-var express = require('express');
-var router = express.Router();
-var mongoose = require('mongoose');
-var User = mongoose.model('User');
+import {Router} from 'express';
+import mongoose from 'mongoose';
 
-var encrypt = require('../utils/encrypt');
+import encrypt from '../utils/encrypt';
+
+const User = mongoose.model('User');
+const router = new Router();
 
 // loginPage
-router.get('/', function(req, res, next){
+router.get('/', (req, res) => {
   res.render('system/login', {
     title: 'Login'
-  })
+  });
 });
 
 // registerPage
-router.get('/registerPage', function(req, res, next){
+router.get('/registerPage', (req, res) => {
   res.render('system/register', {
     title: 'Register'
-  })
+  });
 });
 
 // loginApi
-router.post('/register', function(req, res, next) {
-  var username = req.body.username;
-  var password = req.body.password;
-  User.find({ username: username }, function(err, result){
-    if(result.length){
+router.post('/register', (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  User.find({username}, (err, result) => {
+    if (result.length) {
       res.send('user has existed');
-    }else{
-      var hash = encrypt(password);
+    } else {
+      const hash = encrypt(password);
       new User({
-        username: username,
+        username,
         password: hash
       })
-      .save(function(err, user){
+      .save((error, user) => {
         console.log(user);
         res.send('success');
-      })
+      });
     }
-  })
-  
+  });
 });
 
-router.post('/login', function(req, res, next) {
-  var username = req.body.username;
-  var password = req.body.password;
-  var hash = encrypt(password);
+router.post('/login', (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  const hash = encrypt(password);
   User.find({
-    username: username,
+    username,
     password: hash
-  }, function(err, result){
-    if(result.length){
+  }, (err, result) => {
+    if (result.length) {
       req.session.username = username;
       res.redirect('/listControl');
-    }else{
-      res.send('wrong username/password');
+    } else {
+      res.render('system/login', {
+        invalid: true
+      });
     }
-  })
+  });
 });
 
 module.exports = router;
