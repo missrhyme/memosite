@@ -12,7 +12,7 @@ import orderRoute from './app/routes/order';
 
 // express init
 const app = express();
-
+swig.setDefaults({autoescape: false});
 app.set('views', path.join(__dirname, '/app/views'));
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');

@@ -22,9 +22,13 @@ mws({
   },
   callback: function (error, response, body) {
     parser.parseString(body, function (err, result) {
-      console.dir(result);
-      fs.writeFileSync('result.json', JSON.stringify(result, null, 2));
-      console.log('Done');
+      //console.log(result.ListOrdersResponse.ListOrdersResult);
+      if(result.ListOrdersResponse) {
+        var order = result.ListOrdersResponse.ListOrdersResult[0].Orders[0].Order;
+        console.log(order.length);
+        fs.writeFileSync('result.json', JSON.stringify(order, null, 2));
+        console.log('Done');
+      }
     });
   }
 });
