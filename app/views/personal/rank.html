@@ -1,0 +1,53 @@
+{% extends '../layout/innerLayout.html' %}
+
+{% block header %}
+  <!-- <link rel="stylesheet" href="/css/system/login.css"> -->
+  <script src="/lib/echarts.common.min.js"></script>
+{% endblock %}
+
+{% block body %}
+  <div id="main" style="width:100%;height:200px"></div>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+  // new Vue({
+  //   el: '#store-list',
+  //   data: {
+  //     items: {{ list }}
+  //   },
+  //   methods: {
+  //   }
+  // });
+  //
+  var myChart = echarts.init(document.getElementById('main'));
+
+  // 指定图表的配置项和数据
+  var option = {
+    title: {
+      text: '排名折线图'
+    },
+    tooltip: {
+      trigger: 'axis'
+    },
+    legend: {
+      data:['排名']
+    },
+    xAxis: {
+      type: 'category',
+      data: {{xAxis}}
+    },
+    yAxis: {
+       type: 'value'
+    },
+    series: [{
+      name: '排名',
+      type: 'line',
+      data: {{yAxis}}
+    }]
+  };
+
+  // 使用刚指定的配置项和数据显示图表。
+  myChart.setOption(option);
+  </script>
+{% endblock %}

@@ -22,5 +22,11 @@ const ListSchema = new Schema({
   }
 });
 
+const GoodRankSchema = new Schema({
+  skuid: String,
+  rank: Array
+});
+
+mongoose.model('GoodRank', GoodRankSchema);
 mongoose.model('User', UserSchema);
 mongoose.model('List', ListSchema);
